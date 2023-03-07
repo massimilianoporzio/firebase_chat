@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>560042388041-2d3nb621cavhueeqvm7tsj2biu2g4mot.apps.googleusercontent.com</string>
+	<string>560042388041-dkgvpfvgdv2p3nhep39vksjaqkg3agbf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.560042388041-2d3nb621cavhueeqvm7tsj2biu2g4mot</string>
+	<string>com.googleusercontent.apps.560042388041-dkgvpfvgdv2p3nhep39vksjaqkg3agbf</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCwucMLH0mfif263k7Z5D746ndNiWf_6So</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.massimilianoporzio.firebaseChat</string>
+	<string>com.massimilianoporzio.firebsaseChat</string>
 	<key>PROJECT_ID</key>
 	<string>fir-chat-23ab7</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:560042388041:ios:464f9ad1b3a89b7266ed98</string>
+	<string>1:560042388041:ios:ac7d310afdeb1b7c66ed98</string>
 </dict>
 </plist>

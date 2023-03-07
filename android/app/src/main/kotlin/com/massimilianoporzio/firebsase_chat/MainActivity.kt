@@ -1,4 +1,4 @@
-package com.massimilianoporzio.firebase_chat
+package com.massimilianoporzio.firebsase_chat
 
 import io.flutter.embedding.android.FlutterActivity
 

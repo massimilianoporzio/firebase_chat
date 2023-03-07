@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,40 +52,13 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBGnzxU07j8ZQNV316LsnH15PaVni2ejkQ',
-    appId: '1:560042388041:web:5f2bac2d92dd8e3366ed98',
-    messagingSenderId: '560042388041',
-    projectId: 'fir-chat-23ab7',
-    authDomain: 'fir-chat-23ab7.firebaseapp.com',
-    storageBucket: 'fir-chat-23ab7.appspot.com',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBLqdM-HCX3ctBxeF8jY8fGoGle44wlZn4',
-    appId: '1:560042388041:android:81ef77c60d9ed03a66ed98',
-    messagingSenderId: '560042388041',
-    projectId: 'fir-chat-23ab7',
-    storageBucket: 'fir-chat-23ab7.appspot.com',
-  );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCwucMLH0mfif263k7Z5D746ndNiWf_6So',
-    appId: '1:560042388041:ios:464f9ad1b3a89b7266ed98',
+    appId: '1:560042388041:ios:ac7d310afdeb1b7c66ed98',
     messagingSenderId: '560042388041',
     projectId: 'fir-chat-23ab7',
     storageBucket: 'fir-chat-23ab7.appspot.com',
-    iosClientId: '560042388041-2d3nb621cavhueeqvm7tsj2biu2g4mot.apps.googleusercontent.com',
-    iosBundleId: 'com.massimilianoporzio.firebaseChat',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCwucMLH0mfif263k7Z5D746ndNiWf_6So',
-    appId: '1:560042388041:ios:464f9ad1b3a89b7266ed98',
-    messagingSenderId: '560042388041',
-    projectId: 'fir-chat-23ab7',
-    storageBucket: 'fir-chat-23ab7.appspot.com',
-    iosClientId: '560042388041-2d3nb621cavhueeqvm7tsj2biu2g4mot.apps.googleusercontent.com',
-    iosBundleId: 'com.massimilianoporzio.firebaseChat',
+    iosClientId: '560042388041-dkgvpfvgdv2p3nhep39vksjaqkg3agbf.apps.googleusercontent.com',
+    iosBundleId: 'com.massimilianoporzio.firebsaseChat',
   );
 }

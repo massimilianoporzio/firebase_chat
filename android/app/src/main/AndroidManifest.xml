@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.massimilianoporzio.firebase_chat">
+    package="com.massimilianoporzio.firebsase_chat">
    <application
-        android:label="firebase_chat"
+        android:label="firebsase_chat"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
