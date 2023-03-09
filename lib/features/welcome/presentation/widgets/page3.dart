@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../core/routes/names.dart';
 
 class Page3 extends StatelessWidget {
   const Page3({super.key});
+
+    _handleSignIn() {
+    Get.offAndToNamed(AppRoutes.SIGN_IN);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,9 @@ class Page3 extends StatelessWidget {
           Positioned(
             bottom: 90,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                
+              },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.white),
                 foregroundColor: MaterialStateProperty.all(Colors.black),
