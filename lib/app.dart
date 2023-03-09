@@ -4,6 +4,7 @@ import 'package:firebase_chat/features/welcome/presentation/cubit/welcome_cubit.
 import 'package:firebase_chat/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class MyApp extends StatelessWidget {
@@ -18,18 +19,23 @@ class MyApp extends StatelessWidget {
           create: (context) => sl(),
         )
       ],
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        initialRoute: AppPages.INITIAL,
-        getPages: AppPages.routes,
-        // home: const Scaffold(
-        //     body: Center(
-        //   child: WelcomePage(),
-        // )),
+      child: ScreenUtilInit(
+        useInheritedMediaQuery: true,
+        builder: (context, child) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            initialRoute: AppPages.INITIAL,
+            getPages: AppPages.routes,
+            // home: const Scaffold(
+            //     body: Center(
+            //   child: WelcomePage(),
+            // )),
+          );
+        },
       ),
     );
   }

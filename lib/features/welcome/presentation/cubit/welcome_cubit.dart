@@ -4,4 +4,8 @@ part 'welcome_state.dart';
 
 class WelcomeCubit extends Cubit<WelcomeState> {
   WelcomeCubit() : super(WelcomeState.initial());
+
+  void setIndex(index) {
+    emit(state.copyWith(index: index));
+  }
 }
