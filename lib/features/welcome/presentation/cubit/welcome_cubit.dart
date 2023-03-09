@@ -6,6 +6,7 @@ class WelcomeCubit extends Cubit<WelcomeState> {
   WelcomeCubit() : super(WelcomeState.initial());
 
   void setIndex(index) {
+    print("SET INDEX to $index");
     emit(state.copyWith(index: index));
   }
 }

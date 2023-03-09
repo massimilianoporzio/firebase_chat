@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:firebase_chat/features/welcome/presentation/widgets/page1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,7 +9,11 @@ import '../widgets/page2.dart';
 import '../widgets/page3.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  final _pageController = PageController(
+      initialPage: 0,
+      keepPage: false, //non tiene memoria della pagina
+      viewportFraction: 0.999); //per non vedere il "bianco"
+  WelcomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +28,10 @@ class WelcomePage extends StatelessWidget {
               children: [
                 PageView(
                   scrollDirection: Axis.horizontal,
-                  controller: PageController(
-                      initialPage: 0,
-                      keepPage: false, //non tiene memoria della pagina
-                      viewportFraction: 1),
+                  controller: _pageController,
                   reverse: false,
                   pageSnapping: true,
-                  physics: const ClampingScrollPhysics(),
+                  physics: const AlwaysScrollableScrollPhysics(),
                   onPageChanged: (index) {
                     context.read<WelcomeCubit>().setIndex(index);
                   },
@@ -38,7 +40,26 @@ class WelcomePage extends StatelessWidget {
                     Page2(),
                     Page3(),
                   ],
-                )
+                ),
+                Positioned(
+                  bottom: 70,
+                  child: DotsIndicator(
+                    onTap: (position) {
+                      context.read<WelcomeCubit>().setIndex(position.toInt());
+                      _pageController.jumpToPage(position.toInt());
+                    },
+                    position: state.index.toDouble(),
+                    dotsCount: 3,
+                    reversed: false,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    decorator: DotsDecorator(
+                      size: const Size.square(9),
+                      activeSize: const Size(18, 9),
+                      activeShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
