@@ -11,5 +11,9 @@ class AppPages {
       name: AppRoutes.INITIAL,
       page: () => WelcomePage(),
     ),
+    GetPage(
+      name: AppRoutes.SIGN_IN,
+      page: () => WelcomePage(),
+    ),
   ];
 }
