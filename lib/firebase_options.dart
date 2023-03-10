@@ -24,14 +24,17 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
+        return android;
+      case TargetPlatform.iOS:
         throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
+          'DefaultFirebaseOptions have not been configured for ios - '
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
-      case TargetPlatform.iOS:
-        return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,23 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCwucMLH0mfif263k7Z5D746ndNiWf_6So',
-    appId: '1:560042388041:ios:ac7d310afdeb1b7c66ed98',
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyBLqdM-HCX3ctBxeF8jY8fGoGle44wlZn4',
+    appId: '1:560042388041:android:edb5b68c3a185d5a66ed98',
     messagingSenderId: '560042388041',
     projectId: 'fir-chat-23ab7',
     storageBucket: 'fir-chat-23ab7.appspot.com',
-    iosClientId: '560042388041-dkgvpfvgdv2p3nhep39vksjaqkg3agbf.apps.googleusercontent.com',
-    iosBundleId: 'com.massimilianoporzio.firebsaseChat',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCwucMLH0mfif263k7Z5D746ndNiWf_6So',
-    appId: '1:560042388041:ios:464f9ad1b3a89b7266ed98',
-    messagingSenderId: '560042388041',
-    projectId: 'fir-chat-23ab7',
-    storageBucket: 'fir-chat-23ab7.appspot.com',
-    iosClientId: '560042388041-2d3nb621cavhueeqvm7tsj2biu2g4mot.apps.googleusercontent.com',
-    iosBundleId: 'com.massimilianoporzio.firebaseChat',
   );
 }

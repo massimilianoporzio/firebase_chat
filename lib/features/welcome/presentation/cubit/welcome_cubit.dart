@@ -15,9 +15,12 @@ class WelcomeCubit extends Cubit<WelcomeState> {
     emit(state.copyWith(index: index));
   }
 
-  void saveAlreadyOpen() {
-    //TODO: agg status loading per far vedere Spinner
-    //TODO: e anche gestire errori
+  void saveAlreadyOpen() async {
+    emit(state.copyWith(status: WelcomeStatus.loading));
+    await Future.delayed(const Duration(milliseconds: 500));
+    //TODO: e anche gestire errori (ma ci possono essere con SharedPrefs?)
+
     storageService.setBool(STORAGE_DEVICE_FIRST_OPEN_KEY, true);
+    emit(state.copyWith(status: WelcomeStatus.loaded));
   }
 }
