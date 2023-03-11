@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:firebase_chat/core/services/storage_service.dart';
 
-import '../../../../core/config/constants.dart';
+import '../../../../core/config/style/values/app_strings.dart';
 
 part 'welcome_state.dart';
 

@@ -1,4 +1,5 @@
 import 'package:firebase_chat/core/routes/names.dart';
+import 'package:firebase_chat/features/signin/presentation/pages/signin_page.dart';
 import 'package:firebase_chat/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.SIGN_IN,
-      page: () => WelcomePage(),
+      page: () => const SignInPage(),
     ),
   ];
 }

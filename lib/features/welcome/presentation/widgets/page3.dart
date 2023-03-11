@@ -10,7 +10,7 @@ class Page3 extends StatelessWidget {
 
   _handleSignIn(BuildContext context) {
     context.read<WelcomeCubit>().saveAlreadyOpen();
-    // Get.offAndToNamed(AppRoutes.SIGN_IN);
+    Get.offAndToNamed(AppRoutes.SIGN_IN);
   }
 
   @override
