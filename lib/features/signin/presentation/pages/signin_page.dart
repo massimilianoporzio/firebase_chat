@@ -1,4 +1,5 @@
 import 'package:firebase_chat/features/signin/presentation/widgets/logo_widget.dart';
+import 'package:firebase_chat/features/signin/presentation/widgets/third_party_login.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -13,6 +14,8 @@ class SignInPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
           LogoWidget(),
+          Spacer(),
+          ThirdPartyLoginWidget(),
         ],
       ),
     ));

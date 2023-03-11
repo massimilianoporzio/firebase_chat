@@ -28,4 +28,6 @@ class AppColor {
   static const Color pinkColor = Color(0xFFF77866);
 
   static const Color yellowColor = Color(0xFFFFB822);
+
+  static const Color socialButtonColor = Color.fromARGB(255, 106, 96, 247);
 }
