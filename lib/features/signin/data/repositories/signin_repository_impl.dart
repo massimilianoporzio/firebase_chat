@@ -27,7 +27,8 @@ class SigninRepositoryImpl implements SigninRepository {
   Future<Either<Failure, UserLoginResponseEntity>> signInWithGoogle() async {
     try {
       //CHECK SE TOKEN IN CACHE
-      final String? accessToken = await localSignInDatasource.getAccessToken();
+      String? accessToken = await localSignInDatasource.getAccessToken();
+      accessToken = null; //per debug
       if (accessToken != null) {
         //SE LO TROVA PRENDE IL PROFILO DALLA CACHE
         return Right(await localSignInDatasource.getUserProfile());
