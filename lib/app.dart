@@ -1,5 +1,6 @@
 import 'package:firebase_chat/core/routes/pages.dart';
 import 'package:firebase_chat/core/services/service_locator.dart';
+import 'package:firebase_chat/features/signin/presentation/cubit/signin_cubit.dart';
 import 'package:firebase_chat/features/welcome/presentation/cubit/welcome_cubit.dart';
 import 'package:firebase_chat/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<WelcomeCubit>(
+          create: (context) => sl(),
+        ),
+        BlocProvider<SigninCubit>(
           create: (context) => sl(),
         )
       ],

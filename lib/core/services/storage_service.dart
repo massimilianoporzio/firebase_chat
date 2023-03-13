@@ -25,4 +25,25 @@ class StorageService {
   Future<bool> setDouble(String key, double value) async {
     return await prefs.setDouble(key, value);
   }
+
+  //*GETTERS
+  Future<String?> getString(String key) async {
+    return prefs.getString(key);
+  }
+
+  Future<List<String>?> getStringList(String key) async {
+    return prefs.getStringList(key);
+  }
+
+  Future<int?> getInt(String key) async {
+    return prefs.getInt(key);
+  }
+
+  Future<double?> getDouble(String key) async {
+    return prefs.getDouble(key);
+  }
+
+  Future<bool?> getBool(String key) async {
+    return prefs.getBool(key);
+  }
 }
