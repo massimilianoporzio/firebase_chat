@@ -9,12 +9,23 @@ class RemoteSigninDatasource implements SigninDatasource {
   RemoteSigninDatasource({
     required this.googleSignIn,
   });
-  @override
-  Future<UserLoginResponseModel> getUserProfile() async {
+
+  Future<GoogleSignInAccount?> signInWithGoogle() async {
     GoogleSignInAccount? userAccount = await googleSignIn.signIn();
     if (userAccount == null) {
       throw GoogleSignInException();
     }
+    return Future.value(userAccount);
+  }
+
+  @override
+  Future<UserLoginResponseModel> getUserProfile() async {
+    //*QUI CHIEDO INFO A GOOGLE
+    GoogleSignInAccount? userAccount = await googleSignIn.signIn();
+    if (userAccount == null) {
+      throw GoogleSignInException();
+    }
+
     final user = UserLoginResponseModel(
         accessToken: userAccount.id,
         displayName: userAccount.displayName ?? userAccount.email,
