@@ -9,10 +9,10 @@ import 'package:firebase_chat/core/domain/entities/user_entity.dart';
 
 import 'package:firebase_chat/core/errors/failures.dart';
 
-import 'package:firebase_chat/features/signin/data/datasources/local_signin_datasource.dart';
-import 'package:firebase_chat/features/signin/data/datasources/remote_signin_datasource.dart';
-import 'package:firebase_chat/features/signin/data/models/user_model.dart';
-import 'package:firebase_chat/features/signin/domain/repositories/signin_repository.dart';
+import '../../domain/repositories/signin_repository.dart';
+import '../datasources/local_signin_datasource.dart';
+import '../datasources/remote_signin_datasource.dart';
+import '../models/user_model.dart';
 
 class SigninRepositoryImpl implements SigninRepository {
   final LocalSignInDatasource localSignInDatasource;
@@ -39,6 +39,7 @@ class SigninRepositoryImpl implements SigninRepository {
         localSignInDatasource.cacheUserProfile(user);
         //E METTE IN CACHE ANCHE IL TOKEN (non nullo per quanto detto)
         localSignInDatasource.cacheUserToken(user.accessToken!);
+
         return Right(user);
       }
     } on CacheException {

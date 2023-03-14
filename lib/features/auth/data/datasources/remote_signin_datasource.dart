@@ -1,7 +1,6 @@
 import 'package:firebase_chat/core/errors/exceptions.dart';
+import 'package:firebase_chat/features/auth/data/datasources/signin_datasource.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
-import 'package:firebase_chat/features/signin/data/datasources/signin_datasource.dart';
 
 import '../models/user_model.dart';
 

@@ -1,16 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_chat/core/services/storage_service.dart';
-import 'package:firebase_chat/features/signin/data/datasources/local_signin_datasource.dart';
-import 'package:firebase_chat/features/signin/data/datasources/remote_signin_datasource.dart';
-import 'package:firebase_chat/features/signin/data/repositories/signin_repository_impl.dart';
-import 'package:firebase_chat/features/signin/domain/repositories/signin_repository.dart';
-import 'package:firebase_chat/features/signin/domain/usecases/google_signin_usecase.dart';
-import 'package:firebase_chat/features/signin/presentation/cubit/signin_cubit.dart';
-import 'package:firebase_chat/features/welcome/presentation/cubit/welcome_cubit.dart';
+import '../../features/auth/data/datasources/local_signin_datasource.dart';
+import '../../features/auth/data/datasources/remote_signin_datasource.dart';
+import '../../features/auth/data/repositories/signin_repository_impl.dart';
+import '../../features/auth/domain/repositories/signin_repository.dart';
+import 'storage_service.dart';
+
+import '../../features/welcome/presentation/cubit/welcome_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../features/auth/domain/usecases/google_signin_usecase.dart';
+import '../../features/auth/presentation/cubit/signin_cubit.dart';
 
 final sl = GetIt.asNewInstance();
 Future<void> _initSharedPref() async {

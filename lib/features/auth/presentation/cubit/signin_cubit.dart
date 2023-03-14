@@ -1,11 +1,9 @@
 import 'package:equatable/equatable.dart';
-import 'package:firebase_chat/core/domain/usecases/base_usecase.dart';
-import 'package:firebase_chat/features/signin/data/models/user_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:firebase_chat/features/signin/domain/usecases/google_signin_usecase.dart';
-
 import '../../../../core/domain/entities/user_entity.dart';
+import '../../../../core/domain/usecases/base_usecase.dart';
+import '../../domain/usecases/google_signin_usecase.dart';
 
 part 'signin_state.dart';
 

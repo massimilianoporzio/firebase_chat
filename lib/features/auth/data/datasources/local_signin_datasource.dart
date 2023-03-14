@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:firebase_chat/core/domain/entities/user_entity.dart';
 import 'package:firebase_chat/core/errors/exceptions.dart';
-import 'package:firebase_chat/features/signin/data/datasources/signin_datasource.dart';
-import 'package:firebase_chat/features/signin/data/models/user_model.dart';
 
 import '../../../../core/config/constants/storage_constants.dart';
 import '../../../../core/services/storage_service.dart';
+import '../models/user_model.dart';
+import 'signin_datasource.dart';
 
 class LocalSignInDatasource implements SigninDatasource {
   final StorageService storageService;

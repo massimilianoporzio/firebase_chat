@@ -1,10 +1,10 @@
-import 'package:firebase_chat/core/errors/error_dialog.dart';
-import 'package:firebase_chat/features/signin/presentation/widgets/logo_widget.dart';
-import 'package:firebase_chat/features/signin/presentation/widgets/third_party_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/errors/error_dialog.dart';
 import '../cubit/signin_cubit.dart';
+import '../widgets/logo_widget.dart';
+import '../widgets/third_party_login.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});

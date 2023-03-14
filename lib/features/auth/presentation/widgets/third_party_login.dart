@@ -1,10 +1,10 @@
-import 'package:firebase_chat/features/signin/presentation/cubit/signin_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 
 import '../../../../core/config/style/app_color.dart';
+import '../cubit/signin_cubit.dart';
 
 class ThirdPartyLoginWidget extends StatelessWidget {
   const ThirdPartyLoginWidget({super.key});
